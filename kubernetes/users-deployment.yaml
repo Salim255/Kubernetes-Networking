@@ -14,4 +14,9 @@ spec:
     spec:
       containers:
         - name: users
-          image: crawan/kub-demo-users
+          image: crawan/kub-demo-users:latest
+          env:
+            - name: AUTH_ADDRESS
+              value: localhost
+        - name: auth
+          image: crawan/kub-demo-auth:latest
