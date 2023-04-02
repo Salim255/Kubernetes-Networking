@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-service
+spec:
+  selector:
+    #Select All pods need to be used by this service
+    app: users
+  type: LoadBalancer
+  #Type of the service
+  ports:
+    #To define in which port the pod should be open up, and there are for to be reachable
+    - protocol: TCP
+      port: 8080
+      #The port is out side port, we can use any port of our choice
+      targetPort: 8080
+      #The port inside the container, we need to choose the exact port we defined in our container
