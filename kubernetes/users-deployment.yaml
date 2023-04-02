@@ -17,5 +17,7 @@ spec:
           image: crawan/kub-demo-users:latest
           env:
             - name: AUTH_ADDRESS
-              value: "10.100.181.98"
+              value: "auth-service.default"
+              #We this as a domain name to send our request to and the namespace name(default in our case), and by this we can make services in the same cluster communicate to each other
+              #value: "10.100.181.98"
               #We use the clusterIp of our auth-service.yaml(pod)
